@@ -1,4 +1,25 @@
-{"seen": [
-{"url": "https://jobbank.dk/job/3104475/aalborg-energie-technik-aet/student-assistant-customer-outreach/", "title": "Student Assistant - Customer Outreach (op til 14 t/uge)", "company": "Aalborg Energie Technik (AET)", "first_seen": "2026-11-02"},
-{"url": "https://jobbank.dk/en/job/3074220/apropos-bureau-aps/salgskonsulent-deltid-studiejob/", "title": "Salgskonsulent (deltid/studiejob)", "company": "Apropos Bureau ApS", "first_seen": "2026-11-02"}
-]}
+{
+  "seen": [
+    {
+      "url": "https://jobbank.dk/job/3104475/aalborg-energie-technik-aet/student-assistant-customer-outreach/",
+      "title": "Student Assistant - Customer Outreach (op til 14 t/uge)",
+      "company": "Aalborg Energie Technik (AET)",
+      "first_seen": "2026-11-02"
+    },
+    {
+      "url": "https://jobbank.dk/en/job/3074220/apropos-bureau-aps/salgskonsulent-deltid-studiejob/",
+      "title": "Salgskonsulent (deltid/studiejob)",
+      "company": "Apropos Bureau ApS",
+      "first_seen": "2026-11-02"
+    },
+    {
+      "url": "https://jobbank.dk/en/job/3077980/nykredit/bliv-studentermedhjaelper-i-nykredit-leasing-i-aalborg",
+      "title": "Studentermedhjælper i Nykredit Leasing (økonomi/controlling)",
+      "company": "Nykredit",
+      "location": "Aalborg",
+      "hours": "",
+      "first_seen": "2026-11-02",
+      "verified": false
+    }
+  ]
+}
