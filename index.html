@@ -1,8 +1,52 @@
 <!DOCTYPE html>
-<html lang="da"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Studiejob Aalborg</title>
-<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:16px;background:#f6f7f9;color:#222}h1{font-size:1.4rem}.m{color:#666;font-size:.9rem}.c{background:#fff;border-radius:8px;padding:16px;margin-top:16px}</style></head>
-<body><h1>Studiejob i Aalborg</h1>
-<p class="m">Seneste opdatering: 2. november 2026 kl. 08:00</p>
-<div class="c">Ingen verificerede opslag i denne kørsel. Flere kilder returnerede adgangsfejl (403/404), så intet uverificeret er medtaget.</div>
-</body></html>
+<style>
+body{font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:16px;background:#f6f7f9;color:#222}
+h1{font-size:1.4rem;margin-bottom:4px}
+.meta{color:#666;font-size:.85rem;margin-bottom:16px}
+.controls{display:flex;gap:8px;margin-bottom:16px}
+.controls button{flex:1;padding:8px;border:1px solid #ccc;border-radius:6px;background:#fff;font-size:.9rem;cursor:pointer}
+.controls button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.card{background:#fff;border-radius:8px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.card a{font-weight:600;color:#1d4ed8;text-decoration:none;font-size:1.02rem}
+.card a:hover{text-decoration:underline}
+.card .co{color:#444;font-size:.92rem;margin-top:2px}
+.card .meta2{color:#888;font-size:.8rem;margin-top:4px}
+.badge{display:inline-block;background:#16a34a;color:#fff;font-size:.7rem;padding:2px 7px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.empty{color:#666;padding:24px;text-align:center}
+</style>
+</head>
+<body>
+<h1>Studiejob i Aalborg</h1>
+<p class="meta">Seneste opdatering: 2. november 2026 kl. 17:16 &middot; <span id="count"></span> opslag i alt</p>
+<div class="controls">
+<button id="sortNew" class="active">Nyeste først</button>
+<button id="sortOld">Ældste først</button>
+</div>
+<div id="list"></div>
+<script>
+const jobs = [{"url": "https://jobbank.dk/job/3104475/aalborg-energie-technik-aet/student-assistant-customer-outreach/", "title": "Student Assistant - Customer Outreach (op til 14 t/uge)", "company": "Aalborg Energie Technik (AET)", "location": "", "hours": "", "first_seen": "2026-11-02"}, {"url": "https://jobbank.dk/en/job/3074220/apropos-bureau-aps/salgskonsulent-deltid-studiejob/", "title": "Salgskonsulent (deltid/studiejob)", "company": "Apropos Bureau ApS", "location": "", "hours": "", "first_seen": "2026-11-02"}];
+const todayStr = "2026-11-02";
+const listEl = document.getElementById('list');
+const countEl = document.getElementById('count');
+function render(order){
+const sorted = [...jobs].sort((a,b)=> order==='new' ? b.first_seen.localeCompare(a.first_seen) : a.first_seen.localeCompare(b.first_seen));
+countEl.textContent = sorted.length;
+if(sorted.length===0){ listEl.innerHTML = '<div class="empty">Ingen opslag fundet endnu.</div>'; return; }
+listEl.innerHTML = sorted.map(j => `
+<div class="card">
+<a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>${j.first_seen===todayStr ? '<span class="badge">NYT</span>' : ''}
+<div class="co">${j.company}${j.location ? ' · ' + j.location : ''}${j.hours ? ' · ' + j.hours : ''}</div>
+<div class="meta2">Fundet: ${j.first_seen}</div>
+</div>`).join('');
+}
+document.getElementById('sortNew').onclick = ()=>{ render('new'); document.getElementById('sortNew').classList.add('active'); document.getElementById('sortOld').classList.remove('active'); };
+document.getElementById('sortOld').onclick = ()=>{ render('old'); document.getElementById('sortOld').classList.add('active'); document.getElementById('sortNew').classList.remove('active'); };
+render('new');
+</script>
+</body>
+</html>
