@@ -22,7 +22,7 @@ h1{font-size:1.4rem;margin-bottom:4px}
 </head>
 <body>
 <h1>Studiejob i Aalborg</h1>
-<p class="meta">Seneste opdatering: 2. november 2026 kl. 08:00 &middot; <span id="count"></span> opslag i alt</p>
+<p class="meta">Seneste opdatering: 3. november 2026 kl. 08:00 &middot; <span id="count"></span> opslag i alt</p>
 <div class="controls">
 <button id="sortNew" class="active">Nyeste først</button>
 <button id="sortOld">Ældste først</button>
@@ -30,7 +30,7 @@ h1{font-size:1.4rem;margin-bottom:4px}
 <div id="list"></div>
 <script>
 const jobs = [{"url": "https://jobbank.dk/job/3104475/aalborg-energie-technik-aet/student-assistant-customer-outreach/", "title": "Student Assistant - Customer Outreach (op til 14 t/uge)", "company": "Aalborg Energie Technik (AET)", "location": "", "hours": "", "first_seen": "2026-11-02", "verified": true}, {"url": "https://jobbank.dk/en/job/3074220/apropos-bureau-aps/salgskonsulent-deltid-studiejob/", "title": "Salgskonsulent (deltid/studiejob)", "company": "Apropos Bureau ApS", "location": "", "hours": "", "first_seen": "2026-11-02", "verified": true}, {"url": "https://jobbank.dk/en/job/3077980/nykredit/bliv-studentermedhjaelper-i-nykredit-leasing-i-aalborg", "title": "Studentermedhjælper i Nykredit Leasing (økonomi/controlling)", "company": "Nykredit", "location": "Aalborg", "hours": "", "first_seen": "2026-11-02", "verified": false}, {"url": "https://jobbank.dk/job/3117732/", "title": "Studentermedhjælper til Økonomiafdelingen (økonomi/PowerBI)", "company": "Aalborg Universitet (AAU)", "location": "Aalborg Øst", "hours": "ca. 10 t/uge", "first_seen": "2026-11-02", "verified": false}, {"url": "https://jobbank.dk/en/job/3107356/nykredit/bliv-studentermedhjaelper-i-kundeservice-i-nykredit-direkte-aalborg-og-gor-en-forskel-for-vores-kunder", "title": "Studentermedhjælper i kundeservice i Nykredit Direkte", "company": "Nykredit", "location": "Aalborg", "hours": "", "first_seen": "2026-11-02", "verified": false}, {"url": "https://jobbank.dk/virksomheder/31163/jobs/cfl-center-for-ledelse", "title": "Studentermedhjælper (research, data, administration)", "company": "CfL - Center for Ledelse", "location": "Aalborg", "hours": "10-15 t/uge", "first_seen": "2026-11-02", "verified": false}];
-const todayStr = "2026-11-02";
+const todayStr = "2026-11-03";
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 function render(order){
